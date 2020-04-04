@@ -1,0 +1,47 @@
+/*=====================================
+=            Avatar Styles            =
+=====================================*/
+
+.avatar {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: em(50);
+	height: em(50);
+	user-select: none;
+	&--large {
+		font-size: em(29);
+	}
+	&__image,
+	&__wrapper {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&__wrapper {
+		border-radius: 100%;
+		overflow: hidden;
+		background-color: get-color('blue-light');
+		color: get-color('blue');
+		font-weight: $semi-bold-font-weight;
+		text-align: center;
+		line-height: em(50);
+		text-decoration: none;
+		&,
+		&:active {
+			box-shadow: 0 0 0 rem(1) get-color('gray-light-very');
+		}
+		&:active {
+			transform: scale(1);
+		}
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+}

@@ -1,0 +1,32 @@
+/*====================================
+=            Error Styles            =
+====================================*/
+
+.error {
+	&-code {
+		display: inline-block;
+		vertical-align: middle;
+		padding: em(5) em(10);
+		border-radius: rem($border-radius);
+		background-color: get-color('red');
+		color: get-color('white');
+		font-size: em(12);
+		line-height: 1;
+		&__label {
+			font-weight: $bold-font-weight;
+			& + * {
+				margin-left: em(5);
+			}
+		}
+		&__code {
+		}
+		& + .error-message {
+			margin-top: em(5);
+		}
+	}
+	&-message {
+		display: block;
+		font-size: em(17);
+		font-weight: $semi-bold-font-weight;
+	}
+}

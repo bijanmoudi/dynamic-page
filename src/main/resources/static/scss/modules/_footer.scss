@@ -1,0 +1,10 @@
+/*=====================================
+=            Footer Styles            =
+=====================================*/
+
+.footer {
+	padding: rem(17) 0;
+	font-size: em(13);
+	background-color: get-color('gray-light-very');
+	box-shadow: 0 rem(-1) rem(3) get-color('gray-light', 0.45);
+}

@@ -1,0 +1,124 @@
+/*======================================
+=            Default Styles            =
+======================================*/
+
+html {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smooth: always;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	overflow-y: scroll;
+	&.not--scrollable {
+		overflow: hidden;
+		body {
+			overflow-y: scroll;
+		}
+	}
+}
+
+body {
+	background-color: get-color('white');
+	color: get-color('gray-dark-very');
+	font: normal normal 500 #{rem($body-font-size)}/ 140% #{$body-font-family};
+	overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+	box-shadow: none;
+	box-sizing: inherit;
+}
+
+*::selection {
+	background-color: get-color('black');
+	color: get-color('white');
+	text-shadow: none;
+}
+
+em,
+strong {
+	font-weight: $semi-bold-font-weight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: $semi-bold-font-weight;
+}
+
+h1 {
+	font-size: em($h1-font-size);
+}
+
+h2 {
+	font-size: em($h2-font-size);
+}
+
+h3 {
+	font-size: em($h3-font-size);
+}
+
+h4 {
+	font-size: em($h4-font-size);
+}
+
+h5 {
+	font-size: em($h5-font-size);
+}
+
+h6 {
+	font-size: em($h6-font-size);
+}
+
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+	touch-action: manipulation;
+}
+
+a,
+button,
+[role='button'],
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	cursor: pointer;
+	&:active {
+		transform: scale(0.95);
+		box-shadow: none;
+	}
+}
+
+a,
+input,
+button,
+[role='button'] {
+	&:-moz-focusring {
+		outline: none;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+hr {
+	margin: em(30) auto;
+	border: 0 none;
+	border-bottom: em(2) solid get-color('gray-light-very');
+	box-shadow: 0 em(2) em(5) get-color('gray-light-very', 0.5);
+}
+
+[hidden] {
+	display: none !important;
+}

@@ -1,0 +1,12 @@
+/*===================================
+=            Logo Styles            =
+===================================*/
+
+.logo {
+	&,
+	&__image {
+		display: inline-block;
+		vertical-align: middle;
+		font-weight: $bold-font-weight;
+	}
+}

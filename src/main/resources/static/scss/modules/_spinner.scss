@@ -1,0 +1,43 @@
+/*======================================
+=            Spinner Styles            =
+======================================*/
+
+.spinner {
+	display: inline-block;
+	vertical-align: middle;
+	width: em(24);
+	min-width: em(24);
+	height: em(24);
+	border-radius: 100%;
+	border: em(2) solid get-color('gray-light', 0.5);
+	border-top-color: get-color('red');
+	border-right-color: get-color('red');
+	animation: spin 500ms linear infinite;
+}
+
+.is--loading {
+	position: relative;
+	min-height: em(50);
+	&:before,
+	&:after {
+		content: '';
+		z-index: 2;
+		position: absolute;
+	}
+	&:before {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: get-color('white', 0.8);
+	}
+	&:after {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transform-origin: 0 0;
+		font-size: em(20);
+		@extend .spinner;
+		animation-name: spin-centered;
+	}
+}

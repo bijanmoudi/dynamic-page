@@ -1,0 +1,21 @@
+/*=====================================
+=            Color Helpers            =
+=====================================*/
+
+@import '../constants/colors';
+
+@function get-color($color, $opacity: 1, $_colors: $colors) {
+	@return rgba(map-get($_colors, $color), $opacity);
+}
+
+@mixin generate-color-classes($_colors: $colors) {
+	@each $color, $i in $_colors {
+		.color--#{$color} {
+			&,
+			&:visited,
+			&:active {
+				color: $i;
+			}
+		}
+	}
+}

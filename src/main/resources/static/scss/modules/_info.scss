@@ -1,0 +1,41 @@
+/*===================================
+=            Info Styles            =
+===================================*/
+
+.info {
+	font-size: em(14);
+	line-height: 1;
+	&__item {
+		display: flex;
+		@include mq($until: sm) {
+			flex-direction: column;
+		}
+		& + & {
+			margin-top: em(23, 14);
+		}
+	}
+	&__title {
+		flex-shrink: 0;
+		width: em(130, 14);
+		padding-right: em(28, 14);
+		color: get-color('gray-dark');
+		text-align: right;
+		font-weight: $semi-bold-font-weight;
+		text-transform: capitalize;
+		@include mq($until: sm) {
+			text-align: inherit;
+			padding-right: 0;
+			& + * {
+				margin-top: em(5, 14);
+			}
+		}
+		& > * {
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: inherit;
+		}
+	}
+	&__content {
+		color: get-color('gray');
+	}
+}

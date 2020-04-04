@@ -1,0 +1,22 @@
+/*========================================
+=            Layout Constants            =
+========================================*/
+
+$body-font-size: 16;
+$body-font-family: 'Open Sans', sans-serif;
+$h1-font-size: 20;
+$h2-font-size: 18;
+$h3-font-size: 17;
+$h4-font-size: 16;
+$h5-font-size: 15;
+$h6-font-size: 14;
+$semi-bold-font-weight: 600;
+$bold-font-weight: 700;
+$wrapper-width: 1200;
+$border-radius: 3;
+$mq-breakpoints: (
+	xs: 480px,
+	sm: 768px,
+	md: 991px,
+	lg: 1280px
+);

@@ -1,0 +1,69 @@
+/*==============================================
+=            Content Section Styles            =
+==============================================*/
+
+.content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	&,
+	&__wrapper {
+		&.is--loading {
+			&:after {
+				top: 20%;
+				@include mq($until: sm) {
+					top: rem(196);
+				}
+			}
+		}
+	}
+	&__header {
+		z-index: 1;
+		position: relative;
+		background-color: get-color('white', 0.975);
+		box-shadow: 0 rem(1) rem(3) get-color('gray-light', 0.35);
+		&--is-sticked {
+			.content-header__inner {
+				padding: rem(5) 0;
+			}
+		}
+	}
+	&__body {
+		z-index: 0;
+		position: relative;
+	}
+	&-header {
+		&__inner {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 rem(-5);
+			padding: rem(18) 0;
+			transition: padding 150ms ease;
+		}
+		&__column {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: rem(5) rem(5);
+			&:last-child {
+				justify-content: flex-end;
+			}
+			&:first-child {
+				justify-content: flex-start;
+			}
+			& > * {
+				& + * {
+					margin-left: rem(10);
+				}
+			}
+		}
+	}
+	&-body {
+		&__inner {
+			padding-top: rem(21);
+			padding-bottom: rem(68);
+		}
+	}
+}

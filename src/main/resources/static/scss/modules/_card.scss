@@ -1,0 +1,110 @@
+/*===================================
+=            Card Styles            =
+===================================*/
+
+.card {
+	position: relative;
+	border-radius: rem($border-radius);
+	border: 1px solid get-color('gray-light-very');
+	list-style: none;
+	box-shadow: 0 0 rem(3) get-color('gray-light', 0.45);
+	background-color: get-color('white', 0.9);
+	animation: fadeIn 500ms;
+	&:hover {
+		box-shadow: 0 0 rem(3) get-color('gray-dark-extra', 1);
+	}
+	& + & {
+		margin-top: em(10);
+	}
+	&__inner {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		margin: 0 em(-5);
+		padding: em(14) em(30);
+		@include mq($until: sm) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&__column {
+		padding: em(4) em(5);
+		&--info {
+			flex-grow: 1;
+		}
+	}
+	&__header {
+		min-height: em(22);
+		& > * {
+			z-index: 1;
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: em(10);
+			@include mq($until: sm) {
+				display: inline;
+				margin-right: 0;
+			}
+		}
+		& + * {
+			margin-top: em(3);
+		}
+	}
+	&__title {
+		color: get-color('gray-dark-very');
+		& > * {
+			display: block;
+			@include mq($from: sm) {
+				max-width: em(420);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			@include mq($until: sm) {
+				display: inline;
+			}
+		}
+		a {
+			color: inherit;
+			text-decoration: none;
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: underline;
+			}
+			&:active {
+				transform: scale(1);
+				opacity: 0.8;
+			}
+		}
+	}
+	&__meta {
+		color: get-color('gray');
+		line-height: 1;
+		&-item {
+			z-index: 1;
+			position: relative;
+			display: inline-flex;
+			margin-right: em(12);
+			text-align: left;
+			font-size: em(14);
+			@include mq($until: sm) {
+				margin: 0 em(6);
+			}
+			&--subject {
+				&:before {
+					content: '✔';
+					flex-shrink: 0;
+					margin-right: em(6, 14);
+				}
+			}
+		}
+	}
+	&__avatar {
+		z-index: 1;
+		position: relative;
+		@include mq($until: sm) {
+			font-size: em(29);
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "gamesys-assignment",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"devDependencies": {
+		"autoprefixer": "^6.3.3",
+		"node-sass": "^3.4.2",
+		"postcss": "^5.0.16",
+		"postcss-cli": "^2.5.1",
+		"uglify-js": "^3.8.1",
+		"uglifycss": "0.0.29"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"sass": "node-sass --watch scss -o css",
+		"css:autoprefixer": "postcss css/styles.css --use autoprefixer --autoprefixer.browsers \"last 100 versions\" --output css/styles.css",
+		"css:minify": "uglifycss css/styles.css > css/styles.min.css",
+		"js:minify": "uglifyjs js/scripts.js -cmo js/scripts.min.js --source-map",
+		"build": "npm run css:autoprefixer && npm run css:minify && npm run js:minify"
+	},
+	"author": "Bijan Moudi",
+	"license": "ISC"
+}

@@ -1,0 +1,64 @@
+/*======================================================
+=            Layout Styles & Common classes            =
+======================================================*/
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.noselect {
+	user-select: none;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.semibold {
+	font-weight: $semi-bold-font-weight;
+}
+
+.h1 {
+	font-size: em($h1-font-size);
+}
+
+.h2 {
+	font-size: em($h2-font-size);
+}
+
+.h3 {
+	font-size: em($h3-font-size);
+}
+
+.h4 {
+	font-size: em($h3-font-size);
+}
+
+.h5 {
+	font-size: em($h4-font-size);
+}
+
+.h6 {
+	font-size: em($h5-font-size);
+}
+
+.width--full {
+	width: 100%;
+	flex-grow: 1;
+}
+.height--full {
+	height: 100%;
+	flex-grow: 1;
+}

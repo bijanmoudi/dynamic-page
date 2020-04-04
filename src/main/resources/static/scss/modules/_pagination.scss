@@ -1,0 +1,80 @@
+/*=========================================
+=            Pagination Styles            =
+=========================================*/
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	&__item {
+		& + * {
+			margin-left: em(5, 14);
+		}
+		&--previous-group {
+			.pagination__link {
+				&:before {
+					content: '«';
+				}
+			}
+		}
+		&--next-group {
+			.pagination__link {
+				&:before {
+					content: '»';
+				}
+			}
+		}
+		&--previous-page {
+			.pagination__link {
+				&:before {
+					content: '‹';
+				}
+			}
+		}
+		&--next-page {
+			.pagination__link {
+				&:before {
+					content: '›';
+				}
+			}
+		}
+		&--is-active {
+			.pagination__link {
+				pointer-events: none;
+				border-color: get-color('gray-dark');
+				background-color: get-color('gray-dark');
+				color: get-color('gray-light-ultra');
+			}
+		}
+	}
+	&__link {
+		display: block;
+		height: em(32, 14);
+		min-width: em(32, 14);
+		padding: 0 em(5, 14);
+		border-radius: rem($border-radius);
+		border: rem(2) solid get-color('gray-light');
+		background-color: get-color('gray-light-ultra');
+		color: get-color('gray-dark');
+		text-decoration: none;
+		text-align: center;
+		line-height: em(28, 14);
+		font-size: em(14);
+		font-weight: $semi-bold-font-weight;
+		&:before {
+			font-size: em(18);
+			line-height: 1;
+		}
+		&:hover,
+		&:focus {
+			border-color: get-color('gray-dark');
+			color: get-color('gray-dark-very');
+		}
+		&--is-disabled {
+			pointer-events: none;
+			border-color: get-color('gray-light-very') !important;
+			color: get-color('gray-light') !important;
+		}
+	}
+}

@@ -676,16 +676,15 @@ app.base.fn = {
 		// If the target element is not
 		// valid, no action should be taken
 		if (targetElement) {
+			// Check whether the target is the
+			// main content container of the page
+			var isMainContent = target === app.base.vars.contentContainerSelector;
+			// Scroll to the top of the page if the content will
+			// be shown in the main content container of the page
+			isMainContent && window.scrollTo(0, 0);
 			// Will be called after fetch is done
 			var callback = function(content) {
 					if (content) {
-						// Check whether the target is the
-						// main content container of the page
-						var isMainContent =
-							target === app.base.vars.contentContainerSelector;
-						// Scroll to the top of the page if the content will
-						// be shown in the main content container of the page
-						isMainContent && window.scrollTo(0, 0);
 						// Prepare the content to be shown
 						var data = app.base.fn.prepareDataFromContent(
 							content,
